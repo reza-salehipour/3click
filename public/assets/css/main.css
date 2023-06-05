@@ -1,0 +1,91 @@
+header {
+    height: 56px;
+    max-height: 56px;
+    margin-top: 0px;
+    transform: translateY(0px);
+}
+
+#navbarSupportedContent {
+    width: 256px;
+    box-shadow: 0 8px 10px -5px rgba(0, 0, 0, .2), 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12);
+    left: 0;
+    right: auto;
+    transform: translateX(0%);
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-property: transform, visibility, width;
+}
+
+nav div a, nav > a {
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color .3s;
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+nav div a span {
+    color: #3a3a3a;
+    font-size: 16px;
+}
+
+flight-box-container {
+    height: 430px;
+}
+
+.flight-box-container__image {
+    border-radius: 0 0 30px 30px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+flight-box-container__nav__item:nth-child(n) {
+    margin-right: 16px;
+}
+
+flight-box-container__nav__item--active:nth-child(n) {
+    border-radius: 16px;
+    border: 2px solid #fc4174;
+}
+
+flight-box-container__nav__item--active, flight-box-container__nav__item {
+    width: 70px;
+    height: 70px;
+    color: red !important;
+    background: #fff;
+    text-decoration: none;
+    transition: all .5s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+@media screen and (min-width: 992px) {
+    header {
+        height: 77px;
+        max-height: 77px;
+    }
+
+    nav div a, nav > a {
+        font-size: 16px;
+        margin: 5px 0 0;
+        padding: 15px;
+        color: #3a3a3a;
+    }
+
+    nav div button {
+        color: #2d3d6c;
+        caret-color: #2d3d6c;
+        min-width: 36px;
+        letter-spacing: 0;
+        border-radius: 12px;
+        transition: opacity .2s cubic-bezier(.4, 0, .6, 1);
+        border: 1px solid #2d3d6c;
+    }
+
+    nav div a:hover:not(:last-child, :first-child), nav div button:hover {
+        background-color: rgba(46, 77, 119, .18431)
+    }
+
+    nav div a:hover:last-child {
+        background-color: rgba(251, 148, 148, .18431)
+    }
+}
+
