@@ -13,68 +13,99 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <link rel="stylesheet" href="{{asset('assets/css/font-awesome-pro-6.4.0.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+<body style="background: #f5f7f9">
+<nav class="collapse navbar-collapse position-fixed vh-100 d-flex flex-column bg-white z-1 d-md-none"
+     id="navbarSupportedContent">
+    <div class="d-flex flex-column w-100 nav-items">
+        <a class="pointer-event w-100 mt-1 p-4">
+        <span>
+            Airplane Ticket
+        </span>
+        </a>
+        <a class="pointer-event w-100 mt-1 p-4">
+        <span>
+            Hotel
+        </span>
+        </a>
+        <a class="pointer-event w-100 mt-1 p-4">
+        <span>
+            Packages
+        </span>
+        </a>
+        <a class="pointer-event w-100 mt-1 p-4">
+        <span>
+            Services
+        </span>
+        </a>
     </div>
+</nav>
+<div class="vw-100 position-relative d-flex flex-column">
+    <header class="position-relative bg-white">
+        <div class="container h-100">
+            <nav class="navbar navbar-expand-lg navbar-light h-100">
+                <div class="d-flex d-lg-none justify-content-between w-100 mobile-nav">
+                    <button class="navbar-toggler border-2" type="button" data-bs-toggle="collapse"
+                            href="#navbarSupportedContent">
+                        <i class="fa-solid fa-bars-sort fa-flip-vertical"></i>
+                    </button>
+
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ asset('assets/images/logo.svg') }}" alt="logo" style="max-height: 24px;">
+                    </a>
+
+                    <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <i class="fa-light fa-user"></i>
+                    </button>
+                </div>
+                <nav class="d-none justify-content-between d-lg-flex w-100 desktop-navbar">
+                    <div class="d-lg-flex py-lg-2">
+                        <div class="text-center justify-content-center">
+                            <a class="" href="#">
+                                <img src="{{ asset('assets/images/logo.svg') }}" alt="logo" style="max-height: 24px;">
+                            </a>
+                            <a class="" href="#">
+                                Airplane Ticket
+                            </a>
+                            <a class="" href="#">
+                                Hotel
+                            </a>
+                            <a class="" href="#">
+                                Tour
+                            </a>
+                            <a class="" href="#">
+                                Package
+                            </a>
+                            <a class="" href="#">
+                                Services
+                            </a>
+                            <a class="" href="#">
+                                Magazine
+                            </a>
+                        </div>
+                    </div>
+                    <div class="d-flex text-center">
+                        <button class="bg-white">
+                            <span>Login/Register</span>
+                        </button>
+                    </div>
+                </nav>
+            </nav>
+        </div>
+    </header>
+</div>
+<div class="main vh-100 vw-100 mx-4 overflow-x-hidden">
+    @yield('content')
+</div>
+<script src={{asset('assets/js/font-awesome-pro-6.4.0.min.js')}}></script>
+
 </body>
 </html>
