@@ -1,3 +1,33 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    text-decoration: none !important;
+    list-style-type: none;
+    filter: none;
+}
+
+body {
+    color: #777777;
+    background: white;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
 header {
     height: 56px;
     max-height: 56px;
@@ -30,7 +60,7 @@ nav div a span {
 }
 
 flight-box-container {
-    height: 430px;
+    height: 440px;
 }
 
 .flight-box-container__image {
@@ -39,22 +69,36 @@ flight-box-container {
     margin-bottom: 24px;
 }
 
-flight-box-container__nav__item:nth-child(n) {
-    margin-right: 16px;
-}
-
-flight-box-container__nav__item--active:nth-child(n) {
+.thing-to-do a {
+    width: 73px;
+    height: 73px;
     border-radius: 16px;
-    border: 2px solid #fc4174;
-}
-
-flight-box-container__nav__item--active, flight-box-container__nav__item {
-    width: 70px;
-    height: 70px;
-    color: red !important;
+    margin-left: 16px;
     background: #fff;
     text-decoration: none;
     transition: all .5s cubic-bezier(.175, .885, .32, 1.275);
+    flex: 0 0 auto;
+}
+
+.thing-to-do a:first-child {
+    border: 2px solid #fc4174;
+    margin-left:0;
+}
+
+.thing-to-do a i, .thing-to-do a svg{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.thing-to-do>a>div>div{
+    padding-top: 4px;
+    font-weight: 400;
+}
+
+.form-check-input:checked[type=radio] {
+    background-image: url("/assets/images/radio-box.svg");
+    background-color: rgb(252, 65, 116);
+    border-color: rgb(45, 61, 108);
 }
 
 @media screen and (min-width: 992px) {
