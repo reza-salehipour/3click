@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
 
 </head>
-<body style="background: #f5f7f9">
-<nav class="collapse navbar-collapse position-fixed vh-100 d-flex flex-column bg-white z-1 d-md-none"
+<body style="background: #f5f7f9; overflow-x: hidden">
+<nav class="collapse navbar-collapse d-none position-fixed vh-100 d-flex flex-column bg-white z-1 d-md-none"
      id="navbarSupportedContent">
     <div class="d-flex flex-column w-100 nav-items">
         <a class="pointer-event w-100 mt-1 p-4">
@@ -102,7 +102,7 @@
         </div>
     </header>
 </div>
-<div class="main vh-100 vw-100 mx-4 overflow-x-hidden">
+<div class="main vh-100 mx-3 overflow-x-hidden">
     @yield('content')
 </div>
 <script src={{asset('assets/js/font-awesome-pro-6.4.0.min.js')}}></script>
